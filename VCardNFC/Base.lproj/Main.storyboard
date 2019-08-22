@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gv0-dS-64V">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Y72-LA-lYx">
+            <objects>
+                <tabBarController id="Gv0-dS-64V" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MnD-fM-Vab">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Avb-Fd-xnz" kind="relationship" relationship="viewControllers" id="VaM-nu-nPi"/>
+                        <segue destination="Xxb-Yo-Fva" kind="relationship" relationship="viewControllers" id="xlB-yJ-wLb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0L-2R-nnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1499" y="-168"/>
+        </scene>
+        <!--Write-->
+        <scene sceneID="g9N-p5-LXf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Avb-Fd-xnz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Write" image="logo" selectedImage="logo" id="nwq-Ct-cVT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="e41-sZ-QVx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1XA-WP-h8s" kind="relationship" relationship="rootViewController" id="4oW-jq-eCQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjc-mw-OVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-579.71014492753625" y="-491.51785714285711"/>
+        </scene>
+        <!--NFC vCard-->
+        <scene sceneID="CQ0-o5-Uq4">
+            <objects>
+                <tableViewController id="1XA-WP-h8s" customClass="NFCVCardWriterViewController" customModule="VCardNFC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Zhm-Mc-q3o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Identification" footerTitle="Provide valid name &amp; email" id="IOn-s3-EU9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="58" id="gaG-Cz-msa">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaG-Cz-msa" id="ZKj-TH-22L">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUH-Mp-uCW">
+                                                    <rect key="frame" x="16" y="12" width="382" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1XA-WP-h8s" id="TEw-Se-zT3"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ZUH-Mp-uCW" secondAttribute="trailing" constant="16" id="4JZ-4p-ndA"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZUH-Mp-uCW" secondAttribute="bottom" constant="12" id="4gb-tH-owI"/>
+                                                <constraint firstItem="ZUH-Mp-uCW" firstAttribute="leading" secondItem="ZKj-TH-22L" secondAttribute="leading" constant="16" id="gfv-uH-Z6s"/>
+                                                <constraint firstItem="ZUH-Mp-uCW" firstAttribute="top" secondItem="ZKj-TH-22L" secondAttribute="top" constant="12" id="h3D-3p-mr2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="58" id="MOO-rJ-yd6">
+                                        <rect key="frame" x="0.0" y="113.5" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MOO-rJ-yd6" id="ufh-x7-Lyq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-g5-toh">
+                                                    <rect key="frame" x="16" y="12" width="382" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1XA-WP-h8s" id="h3M-ls-k0R"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="iAd-g5-toh" secondAttribute="bottom" constant="12" id="4Iw-iD-NNd"/>
+                                                <constraint firstAttribute="trailing" secondItem="iAd-g5-toh" secondAttribute="trailing" constant="16" id="CXU-hd-dsS"/>
+                                                <constraint firstItem="iAd-g5-toh" firstAttribute="top" secondItem="ufh-x7-Lyq" secondAttribute="top" constant="12" id="FGd-zE-JOR"/>
+                                                <constraint firstItem="iAd-g5-toh" firstAttribute="leading" secondItem="ufh-x7-Lyq" secondAttribute="leading" constant="16" id="X4D-2Q-rb2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="58" id="wf3-xM-Tr9">
+                                        <rect key="frame" x="0.0" y="171.5" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wf3-xM-Tr9" id="yK3-hs-VaH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-Sn-dPh">
+                                                    <rect key="frame" x="16" y="12" width="382" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1XA-WP-h8s" id="A5A-3M-JX8"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Wv4-Sn-dPh" secondAttribute="trailing" constant="16" id="C5Y-Dg-KfN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wv4-Sn-dPh" secondAttribute="bottom" constant="12" id="FD5-Gs-7MY"/>
+                                                <constraint firstItem="Wv4-Sn-dPh" firstAttribute="leading" secondItem="yK3-hs-VaH" secondAttribute="leading" constant="16" id="Rjq-Mq-Xv3"/>
+                                                <constraint firstItem="Wv4-Sn-dPh" firstAttribute="top" secondItem="yK3-hs-VaH" secondAttribute="top" constant="12" id="o0o-ci-Q8O"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Address" id="7pN-RS-b7f">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="162" id="DFO-1p-GyM">
+                                        <rect key="frame" x="0.0" y="297.5" width="414" height="162"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DFO-1p-GyM" id="fOU-yy-Jib">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRe-WT-SWM">
+                                                    <rect key="frame" x="8" y="12" width="398" height="138"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1XA-WP-h8s" id="i2h-s8-cIl"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wRe-WT-SWM" firstAttribute="top" secondItem="fOU-yy-Jib" secondAttribute="top" constant="12" id="3Hy-xQ-voU"/>
+                                                <constraint firstItem="wRe-WT-SWM" firstAttribute="leading" secondItem="fOU-yy-Jib" secondAttribute="leading" constant="8" id="LhV-SB-LaK"/>
+                                                <constraint firstAttribute="trailing" secondItem="wRe-WT-SWM" secondAttribute="trailing" constant="8" id="hD8-iQ-RO0"/>
+                                                <constraint firstAttribute="bottom" secondItem="wRe-WT-SWM" secondAttribute="bottom" constant="12" id="qen-qt-W3u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="1XA-WP-h8s" id="dl8-e5-m9d"/>
+                            <outlet property="delegate" destination="1XA-WP-h8s" id="NH8-aL-3Rn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="NFC vCard" largeTitleDisplayMode="always" id="9H4-2X-S81"/>
+                    <connections>
+                        <outlet property="addressTextView" destination="wRe-WT-SWM" id="9Ui-Jl-Gdk"/>
+                        <outlet property="emailTextField" destination="Wv4-Sn-dPh" id="C9x-gO-FIu"/>
+                        <outlet property="firstNameTextField" destination="ZUH-Mp-uCW" id="7g4-js-cf4"/>
+                        <outlet property="lastNameTextField" destination="iAd-g5-toh" id="m21-fd-Lp4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvU-O7-c9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="-492.1875"/>
+        </scene>
+        <!--Read-->
+        <scene sceneID="Qr2-QD-5LN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xxb-Yo-Fva" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Read" image="logo" id="ATi-sn-FJU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="XV2-9n-S12">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="peq-NF-GHY" kind="relationship" relationship="rootViewController" id="kaK-nI-6ug"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sp3-cs-078" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="195"/>
+        </scene>
+        <!--NFC vCard-->
+        <scene sceneID="9NR-mU-cY2">
+            <objects>
+                <tableViewController id="peq-NF-GHY" customClass="NFCVCardReaderViewController" customModule="VCardNFC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3GY-T6-MUP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="peq-NF-GHY" id="e0z-Gj-t8g"/>
+                            <outlet property="delegate" destination="peq-NF-GHY" id="O2E-DI-wrz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="NFC vCard" largeTitleDisplayMode="always" id="YQt-xw-pFB">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="bAu-bf-KM8">
+                            <connections>
+                                <action selector="scanTapped:" destination="peq-NF-GHY" id="JAm-vk-5qZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLF-Ne-NeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="183"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="25" height="25"/>
+    </resources>
+</document>
